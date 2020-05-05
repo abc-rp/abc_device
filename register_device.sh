@@ -18,7 +18,13 @@ if [ "$2" != "" ]; then
 	#echo "MQTT adapter IP: " $HTTP_ADAPTER_IP
 	echo "token: " $TOKEN
         curl --insecure -X POST -i -H 'Content-Type: application/json' -H "Authorization: Bearer ${TOKEN}" https://$REGISTRY_HOST/v1/devices/$2/$1
+	echo " "
 else
+	#echo "\n---\ndevices:"
+	#curl --insecure -X GET -i -H "Authorization: Bearer ${TOKEN}" https://$REGISTRY_HOST/v1/devices/
+	#echo "\n---\ntenants:"
+	#curl --insecure -X GET -i -H "Authorization: Bearer ${TOKEN}" https://$REGISTRY_HOST/v1/tenants/
+	echo " "
 	echo "please provide the name of the device to be registered and a tenant name"
 	echo "./register_device.sh device_name tenant_name"
 fi
