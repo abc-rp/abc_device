@@ -48,14 +48,9 @@ MQTT_ADAPTER_PORT = 30883
 TF_CONNECT = True
 TF_HOST = "192.168.1.113"
 TF_PORT = 4223
-INTERVAL = 0.5
+INTERVAL = 5
 DEBUG = True
-
-tfIDs = [
-    ['zEo',216],
-    ['yAd',259],
-    ['yue',221],
-]
+PUBLISH = True
 
 TPS1_UID = 'zEo'
 HMS1_UID = 'xB2'
@@ -119,7 +114,7 @@ def main():
     if DEBUG:
         print(tfIDs)
         
-    while True:
+    if PUBLISH:
 
         # Get current temperature
         TPS1 = TPS1_bricklet.get_temperature()/100.0
@@ -168,7 +163,7 @@ def main():
 
         infot.wait_for_publish()
 
-        time.sleep(INTERVAL)
+        # time.sleep(INTERVAL)
 
 if __name__ == "__main__":
     main()
