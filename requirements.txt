@@ -1,2 +1,5 @@
 wheel
 paho-mqtt
+pyudmi
+pandas
+tinkerforge

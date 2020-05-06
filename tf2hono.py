@@ -28,7 +28,7 @@ import os
 import udmi
 from datetime import datetime as dt
 import dateutil.parser
-from pandas.io.json import json_normalize
+from pandas import json_normalize
 
 from tinkerforge.ip_connection import IPConnection
 from tinkerforge.bricklet_ambient_light_v2 import BrickletAmbientLightV2
